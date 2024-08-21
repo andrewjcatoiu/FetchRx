@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <link rel="stylesheet" href="CSS/login.css">
+</head>
+<body>
+
+<div class="container right-panel-active">
+    <!-- Sign Up -->
+    <div class="container__form container--signup">
+        <img src="./img/FetchRx.png" class="logo">
+        <form action="/signup" method="POST" class="form" id="form1">
+            <h2 class="form__title">Sign Up</h2>
+            <input type="text" name="username" placeholder="Username" class="input" />
+            <input type="email" name="email" placeholder="Email" class="input" />
+            <input type="password" name="password" placeholder="Password" class="input" />
+            <label for="role-id" class="input-label">Signing up as customer or employee?</label>
+            <select id="role-id" name="role" class="input" onchange="showExtraFields()">
+                <option value="">Select your role</option>
+                <option value="user">Patient</option>
+                <option value="nurse">Medical Professional</option>
+            </select>
+            <div id="extraFieldsPatient" class="extra-fields hidden">
+                <input type="text" name="patientID" placeholder="Medical Record Number" class="input" />
+            </div>
+            <div id="extraFieldsNurse" class="extra-fields hidden">
+                <input type="text" name="licenseNumber" placeholder="License Number" class="input"/>
+            </div>
+            <button class="btn" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+        <img src="./img/FetchRx.png" class="logo">
+        <form action="#" method="POST" class="form" id="form2">
+            <h2 class="form__title">Sign In</h2>
+            <input type="text" name="username" placeholder="Username" class="input" />
+            <input type="password" name="password" placeholder="Password" class="input" />
+            <a href="#" class="link">Forgot your password?</a>
+            <button class="btn" type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <!-- Overlay -->
+    <div class="container__overlay">
+        <div class="overlay">
+            <div class="overlay__panel overlay--left">
+                <button class="btn" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay__panel overlay--right">
+                <button type="button" class="btn" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="JSscripts/login.js"></script>
+</body>
+</html>

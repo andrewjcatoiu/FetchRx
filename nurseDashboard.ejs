@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nurse Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .btn-custom {
+            height: 42px;
+            width: 150px;
+            color: #fff;
+            margin-right: 15px;
+        }
+        .btn-group .btn-custom:last-child {
+            margin-right: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/nurseDashboard.css">
+</head>
+<body>
+<div class="d-flex h-100">
+    <div class="sidebar bg-light p-4">
+        <h2 style = "text-align: center;">Job Listings</h2>
+        <% if (appointmentsData && appointmentsData.length > 0) { %>
+            <% appointmentsData.forEach(function(appointment) { %>
+                <strong><hr/></strong>
+                <div class = "appointment-box appointment-box:hover">
+                    <p class = "p1">Name: <%= appointment.name %></p>
+                    <p class = "p1">Pharmacy Address: <%= appointment.pharmacy_address %></p>
+                    <p class = "p1">Delivery Address: <%= appointment.personal_address %></p>
+                    <p class = "p1">Email: <%= appointment.email %></p>
+                    <p class = "p1">Phone Number: <%= appointment.phone %></p>
+                    <p class = "p1">Date: <%= appointment.date %></p>
+                    <p class = "p1">Time: <%= appointment.time %></p>
+                    <button class="btn btn-custom float-right mb-3 btn-group book-job" data-id="<%= appointment.id %>">Book</button>
+                    <button class="btn btn-outline-secondary ignore-job" data-id="<%= appointment.id %>">Ignore</button>
+
+                </div>
+                <br style = "display: block; margin-bottom: -1.5em; " ><br>
+            <% }); %>
+        <% } else { %>
+            <p>No appointments scheduled.</p>
+        <% } %>
+    </div>
+    <div class="main-content p-4">
+        <div class="btn-group mb-3">
+            <button style = "height:42px; width:150px"class=" btn btn-custom float-right mb-4 btn-group flex-grow: 1 main-content" ><a style = "color: #fff;"class="btn" href="/view-scheduled-jobs">View  Jobs</a></button>
+            <button style = "color: #fff; margin-right: 25px" class="btn btn-custom">Manage Account</button>
+        </div>
+        <button style = "height:42px; width:150px"class=" btn btn-custom float-right mb-4 btn-group flex-grow: 1 main-content" ><a style = "color: #fff;"class="btn" href="/logout">Logout</a></button>
+        <div id="map"></div>
+    </div>
+</div>
+
+<script src="JSscripts/nurseDashboard.js"  crossorigin="anonymous"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2MxbmlyVGII6gfovgnFcyvVn4cAWzc6w&callback=initMap"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

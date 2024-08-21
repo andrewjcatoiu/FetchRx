@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="CSS/patient-home.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img vertical-align="right" src="img/FetchRx.png" alt="FetchRx Logo" width="240" height="100"/>
+        <p></p>
+        <br>
+        <a href="/about" style="text-align: center;">About</a>
+        <a href="/logout" style="text-align: center;">Log Out</a>
+    </div>
+    
+    <div class="main-content">
+        <div class="dashboard-title">Welcome, <%= userName %></div>
+    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                            <div class="col-md-6 mb-4" onclick="window.location.href='/schedule';">
+                                <div class="dashboard-item text-center">
+                                    <i class="fas fa-calendar-plus icon-big"></i>
+                                    <h5>Request Pickup</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="dashboard-item text-center">
+                                    <i class="fas fa-user-cog icon-big"></i>
+                                    <h5>Account Settings</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="dashboard-item text-center">
+                                    <i class="fas fa-file-prescription icon-big"></i>
+                                    <h5>View Prescription History</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="dashboard-item text-center">
+                                    <i class="fas fa-history icon-big"></i>
+                                    <h5>Pick Up History</h5>
+                                </div>
+                            </div>
+                            <div class="message-scroller">
+                                <div class="message-header">
+                                    <h4>Messages</h4>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Message from Amanda (Rn)</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">1h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Message from Dr. Collar</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">2h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Dr. Jones</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">4h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Nurse Ratchet</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">4h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Message from Walgreens</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">4h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Message from CVS Pharmacy</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">4h ago</div>
+                                </div>
+                                <div class="message-item">
+                                    <div class="message-title">Message from Nurse Katy</div>
+                                    <div class="message-preview">Your appointment is confirmed for tomorrow...</div>
+                                    <div class="message-time">4h ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                    <div class="col-md-6">
+                        <h2 class="mb-4 text-center">Scheduled Pickups</h2>
+                        <div id="pickupCalendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    &copy; 2024 Patient Dashboard. All rights reserved.
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+<script src="JSscripts/patient-home.js"></script>
+</body>
+</html>

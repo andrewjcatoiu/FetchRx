@@ -1,0 +1,9 @@
+To run the code, be in the /Dons-Hack-2024 directory, and then run 'npm start'.
+
+Stopping point from initial commit (summary):
+
+User can properly create an account.
+Login page will only allow correct login info to proceed, server code check DB if info matches.
+
+Andrew's next step after 1st push is to assign roles when people create accounts. Roles will either be 'user' or 'nurse'.
+The page that renders after logging in will depend on the role of the user, e.g. the 'nurse' accounts will redirect to the dashboard of appointments after logging in.
